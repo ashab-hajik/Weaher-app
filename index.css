@@ -1,0 +1,101 @@
+#navcss{
+    background-color:rgb(34 76 23)  !important;
+    opacity: 0.8;
+    color: white;
+   
+}
+#navName{
+    color: white;
+}
+#cityInput{
+    
+        padding-right: 12px;
+        margin-right: 12px;
+        margin-left: 12px;
+        border-radius: 9px;
+        text-align: center;
+        border-color: #0e0d0d;
+        /* transform: scale(1.05);
+  box-shadow: 0 4px 8px rgb(245, 32, 32); */
+
+}
+#cityInput:hover{
+background-color: beige;
+}
+#btncss{
+    margin-right: 25px;
+    border-radius: 7px;
+    background-color:#e7eba6;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgb(245, 32, 32);
+    
+}
+#btncss:hover {
+    background-color: #e6d709;
+    color: white;
+
+    cursor: pointer;
+  }
+#cardHeading1{
+    background-color: #efc24a;
+}
+
+#radius1{
+    border-color:#efc24a;
+}
+#cardHeading2{
+    background-color: #fd683e;
+}
+#radius2{
+    border-color:  #fd683e;
+}
+#forecast{
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    height: 40vh;        
+}
+.heading{
+    
+    text-align: center;
+    font-size: 55px;
+}
+/* #forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27vh;
+    background-color: #889796;
+} */
+.forecast-day {
+    display: flex;
+  align-items: center;
+  gap: 21px;
+  margin-bottom: 20px;
+  background-color: #80b9ae;  /* Light gray background color */
+  padding: 15px;
+  border-radius: 10px;  /* Rounded corners for the card */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+  }
+  .forecast-day:hover{
+    background-color: #f1e575;
+  }
+  
+  .forecast-day img.forecast-icon {
+    width: 80px;   /* Increased size of image */
+    height: 80px;
+  }
+  
+  .forecast-day .forecast-date {
+    font-size: 1.8rem; /* Increase the size of the date */
+    font-weight: bold;
+  }
+  
+  .forecast-day .forecast-temp {
+    font-size: 1.6rem; /* Increase the temperature size */
+    font-weight: bold;
+  }
+  
+  .forecast-day .forecast-desc {
+    font-size: 1.4rem; /* Increase the description text size */
+  }

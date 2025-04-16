@@ -1,0 +1,43 @@
+const forecastApiKey = "fd1f7a08d8b4d12b15ca4dbcbd01b632";
+
+function getForecast() {
+  const city = document.getElementById("cityInput").value;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${forecastApiKey}&units=metric`;
+
+  fetch(forecastUrl)
+    .then(response => response.json())
+    .then(data => {
+      const forecastContainer = document.getElementById("forecast");
+      forecastContainer.innerHTML = ""; // Clear old content if any
+
+      const dailyForecasts = [];
+
+      // Group by 1 per day (every 8th item = approx 24 hrs interval)
+      for (let i = 0; i < data.list.length; i += 8) {
+        const day = data.list[i];
+        const date = new Date(day.dt * 1000).toDateString();
+        const temp = day.main.temp;
+        const desc = day.weather[0].description;
+        const icon = day.weather[0].icon;
+
+        dailyForecasts.push({ date, temp, desc, icon });
+      }
+
+      // Render cards
+      dailyForecasts.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("forecast-card");
+        card.innerHTML = `
+          <h4>${item.date}</h4>
+          <img src="https://openweathermap.org/img/wn/${item.icon}@2x.png" alt="${item.desc}">
+          <p>${item.temp}°C</p>
+          <p>${item.desc}</p>
+        `;
+        forecastContainer.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error("Error loading forecast:", error);
+      document.getElementById("forecast").textContent = "Failed to load forecast data.";
+    });
+}
