@@ -20,11 +20,6 @@ document.getElementById('cityheading').textContent = `Weather in ${city}`;
   
 	  const { lat, lon, name, country } = geoData[0];
   
-	  // Display coordinates (optional)
-	//   document.getElementById('output').textContent =
-	// 	`City: ${name}, Country: ${country}\nLatitude: ${lat}, Longitude: ${lon}`;
-  
-	  // Fetch weather data
 	  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 	  const weatherRes = await fetch(weatherUrl);
 	  const weatherData = await weatherRes.json();
@@ -43,7 +38,7 @@ document.getElementById('cityheading').textContent = `Weather in ${city}`;
 	  document.getElementById('weather_desc').textContent = weatherData.weather[0].description;
   
 	  // Optional: Show card if it's hidden
-	//   document.getElementById('weatherCard').style.display = 'block';
+	
   
 	} catch (err) {
 	  console.error("Error fetching data:", err);
